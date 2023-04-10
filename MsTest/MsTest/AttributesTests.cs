@@ -32,28 +32,28 @@ public class AttributesTests
         Assert.IsTrue(false);
     }
 
-    [DisplayName("DisplayNameAttribute_Success")]
+    [DisplayName("DisplayNameAttribute_Success DisplayName")]
     [TestMethod]
     public void DisplayNameAttribute_Success()
     {
         Assert.IsTrue(true);
     }
 
-    [DisplayName("DisplayNameAttribute_Failed")]
+    [DisplayName("DisplayNameAttribute_Failed DisplayName")]
     [TestMethod]
     public void DisplayNameAttribute_Failed()
     {
         Assert.IsTrue(false);
     }
 
-    [Title("TitleAttribute_Success")]
+    [Title("TitleAttribute_Success Title")]
     [TestMethod]
     public void TitleAttribute_Success()
     {
         Assert.IsTrue(true);
     }
 
-    [Title("TitleAttribute_Failed")]
+    [Title("TitleAttribute_Failed Title")]
     [TestMethod]
     public void TitleAttribute_Failed()
     {
