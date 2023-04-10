@@ -8,8 +8,8 @@ public class MethodTests
     [Test]
     public void AddLinks_Success()
     {
-        Adapter.AddLinks("htts://test01.example", "Example01", "Example01 description", LinkType.Issue);
-        Adapter.AddLinks("htts://test02.example", "Example02", "Example02 description", LinkType.Repository);
+        Adapter.AddLinks("https://test01.example", "Example01", "Example01 description", LinkType.Issue);
+        Adapter.AddLinks("https://test02.example", "Example02", "Example02 description", LinkType.Repository);
 
         Assert.IsTrue(true);
     }
@@ -17,8 +17,8 @@ public class MethodTests
     [Test]
     public void AddLinks_Failed()
     {
-        Adapter.AddLinks("htts://test01.example", "Example01", "Example01 description", LinkType.Issue);
-        Adapter.AddLinks("htts://test02.example", "Example02", "Example02 description", LinkType.Repository);
+        Adapter.AddLinks("https://test01.example", "Example01", "Example01 description", LinkType.Issue);
+        Adapter.AddLinks("https://test02.example", "Example02", "Example02 description", LinkType.Repository);
 
         Assert.IsTrue(false);
     }
@@ -62,8 +62,8 @@ public class MethodTests
     [Test]
     public void AddAllMethods_Success()
     {
-        Adapter.AddLinks("htts://test01.example", "Example01", "Example01 description", LinkType.Issue);
-        Adapter.AddLinks("htts://test02.example", "Example02", "Example02 description", LinkType.Repository);
+        Adapter.AddLinks("https://test01.example", "Example01", "Example01 description", LinkType.Issue);
+        Adapter.AddLinks("https://test02.example", "Example02", "Example02 description", LinkType.Repository);
 
         Adapter.AddAttachments("Content", "file01.txt");
         Adapter.AddAttachments("/attachments/file02.txt");
@@ -77,8 +77,8 @@ public class MethodTests
     [Test]
     public void AddAllMethods_Failed()
     {
-        Adapter.AddLinks("htts://test01.example", "Example01", "Example01 description", LinkType.Issue);
-        Adapter.AddLinks("htts://test02.example", "Example02", "Example02 description", LinkType.Repository);
+        Adapter.AddLinks("https://test01.example", "Example01", "Example01 description", LinkType.Issue);
+        Adapter.AddLinks("https://test02.example", "Example02", "Example02 description", LinkType.Repository);
 
         Adapter.AddAttachments("Content", "file01.txt");
         Adapter.AddAttachments("/attachments/file02.txt");

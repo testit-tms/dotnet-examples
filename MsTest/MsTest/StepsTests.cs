@@ -5,6 +5,12 @@ namespace MsTest;
 [TestClass]
 public class StepsTests
 {
+    [TestInitialize]
+    [Step]
+    private void TestSetup()
+    {
+    }
+    
     [Step]
     private void Step01()
     {
@@ -123,5 +129,11 @@ public class StepsTests
         Step08(5);
 
         Assert.IsTrue(false);
+    }
+    
+    [TestCleanup]
+    [Step]
+    private void TestCleanup()
+    {
     }
 }

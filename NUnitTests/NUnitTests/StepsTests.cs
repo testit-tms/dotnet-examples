@@ -4,6 +4,12 @@ namespace NUnitTests;
 
 public class StepsTests
 {
+    [SetUp]
+    [Step]
+    public void TestSetup()
+    {
+    }
+
     [Step]
     private void Step01()
     {
@@ -122,5 +128,11 @@ public class StepsTests
         Step08(5);
 
         Assert.IsTrue(false);
+    }
+
+    [TearDown]
+    [Step]
+    public void TestCleanup()
+    {
     }
 }

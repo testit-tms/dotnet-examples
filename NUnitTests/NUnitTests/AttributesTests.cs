@@ -87,16 +87,16 @@ public class AttributesTests
         Assert.IsTrue(false);
     }
 
-    [Links("htts://test01.example", LinkType.Issue, "Example01", "Example01 description")]
-    [Links("htts://test02.example", LinkType.Issue, "Example02", "Example02 description")]
+    [Links("https://test01.example", LinkType.Issue, "Example01", "Example01 description")]
+    [Links("https://test02.example", LinkType.Issue, "Example02", "Example02 description")]
     [Test]
     public void LinksAttribute_Success()
     {
         Assert.IsTrue(true);
     }
 
-    [Links("htts://test01.example", LinkType.Issue, "Example01", "Example01 description")]
-    [Links("htts://test02.example", LinkType.Issue, "Example02", "Example02 description")]
+    [Links("https://test01.example", LinkType.Issue, "Example01", "Example01 description")]
+    [Links("https://test02.example", LinkType.Issue, "Example02", "Example02 description")]
     [Test]
     public void LinksAttribute_Failed()
     {
@@ -122,8 +122,8 @@ public class AttributesTests
     [Title("WithAllAttributes_Success Title")]
     [Tms.Adapter.Attributes.Description("WithAllAttributes_Success Description")]
     [Labels("Label1", "Label2")]
-    [Links("htts://test01.example", LinkType.Issue, "Example01", "Example01 description")]
-    [Links("htts://test02.example", LinkType.Issue, "Example02", "Example02 description")]
+    [Links("https://test01.example", LinkType.Issue, "Example01", "Example01 description")]
+    [Links("https://test02.example", LinkType.Issue, "Example02", "Example02 description")]
     [WorkItemIds("123", "321")]
     [Test]
     public void WithAllAttributes_Success()
@@ -136,8 +136,8 @@ public class AttributesTests
     [Title("WithAllAttributes_Failed Title")]
     [Tms.Adapter.Attributes.Description("WithAllAttributes_Failed Description")]
     [Labels("Label1", "Label2")]
-    [Links("htts://test01.example", LinkType.Issue, "Example01", "Example01 description")]
-    [Links("htts://test02.example", LinkType.Issue, "Example02", "Example02 description")]
+    [Links("https://test01.example", LinkType.Issue, "Example01", "Example01 description")]
+    [Links("https://test02.example", LinkType.Issue, "Example02", "Example02 description")]
     [WorkItemIds("123", "321")]
     [Test]
     public void WithAllAttributes_Failed()
