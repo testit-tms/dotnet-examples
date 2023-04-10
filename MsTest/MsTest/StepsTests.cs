@@ -7,7 +7,7 @@ public class StepsTests
 {
     [TestInitialize]
     [Step]
-    private void TestSetup()
+    public void TestSetup()
     {
     }
     
@@ -133,7 +133,7 @@ public class StepsTests
     
     [TestCleanup]
     [Step]
-    private void TestCleanup()
+    public void TestCleanup()
     {
     }
 }
