@@ -1,10 +1,10 @@
-# NUnit example
-Example of tests with NUnit framework and adapter for Test IT
+# MsTest example
+Example of tests with MsTest framework and adapter for Test IT
 
 ## Setup
 
 1. Install [.NET 6+](https://learn.microsoft.com/ru-ru/dotnet/core/install/windows?tabs=net70)
-2. Clone this repository `git clone https://github.com/testit-tms/dotnet-examples.git && cd NUnitTests/NUnitTests`
+2. Clone this repository `git clone https://github.com/testit-tms/dotnet-examples.git && cd MsTest/MsTest`
 3. Configure the tests to run in **Tms.config.json** file. [How to configure?](https://github.com/testit-tms/adapters-dotnet/tree/main/Tms.Adapter#configuration)
 4. build the project `dotnet build`
 5. download [TmsRunner from Assets of release](https://github.com/testit-tms/adapters-dotnet/releases)
