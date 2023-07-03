@@ -1,0 +1,13 @@
+{
+  "stepAssemblies": [
+    {
+      "assembly": "SpecFlowTests"
+    },
+    {
+      "assembly": "Tms.Adapter.SpecFlowPlugin"
+    },
+    {
+      "assembly": "SpecFlowSharedSteps"
+    }
+  ]
+}
