@@ -6,7 +6,7 @@ Example of tests with XUnit framework and adapter for Test IT
 
 1. Install [.NET 6+](https://learn.microsoft.com/ru-ru/dotnet/core/install/windows?tabs=net70)
 2. Clone this repository `git clone https://github.com/testit-tms/dotnet-examples.git && cd XUnitTests/XUnitTests`
-3. Configure the tests to run in **Tms.config.json** file. [How to configure?](https://github.com/testit-tms/adapters-dotnet/tree/main/Tms.Adapter#configuration)
+3. Configure the tests to run in **Tms.config.json** file. [How to configure?](https://github.com/testit-tms/adapters-dotnet/tree/main/Tms.Adapter.XUnit#configuration)
 4. Build the project `dotnet build`
 5. Run tests via `dotnet test` to upload the results to TMS
 
