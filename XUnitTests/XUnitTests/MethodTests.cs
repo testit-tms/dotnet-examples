@@ -29,11 +29,11 @@ public class MethodTests
     {
         Adapter.AddAttachments("Content", "file01.txt");
         var basePath = AppContext.BaseDirectory;
-        Adapter.AddAttachments(Path.Combine(basePath, "attachments/file02.txt"));
+        Adapter.AddAttachments(Path.Combine(basePath, "attachments", "file02.txt"));
         Adapter.AddAttachments(new List<string>
         {
-            Path.Combine(basePath, "attachments/picture.jpeg"),
-            Path.Combine(basePath, "attachments/picture.png")
+            Path.Combine(basePath, "attachments", "picture.jpeg"),
+            Path.Combine(basePath, "attachments", "picture.png")
         });
 
         Assert.True(true);
@@ -44,11 +44,11 @@ public class MethodTests
     {
         Adapter.AddAttachments("Content", "file01.txt");
         var basePath = AppContext.BaseDirectory;
-        Adapter.AddAttachments(Path.Combine(basePath, "attachments/file02.txt"));
+        Adapter.AddAttachments(Path.Combine(basePath, "attachments", "file02.txt"));
         Adapter.AddAttachments(new List<string>
         {
-            Path.Combine(basePath, "attachments/file03.txt"),
-            Path.Combine(basePath, "attachments/file04.txt")
+            Path.Combine(basePath, "attachments", "file03.txt"),
+            Path.Combine(basePath, "attachments", "file04.txt")
         });
 
         Assert.True(false);
@@ -78,11 +78,11 @@ public class MethodTests
 
         Adapter.AddAttachments("Content", "file01.txt");
         var basePath = AppContext.BaseDirectory;
-        Adapter.AddAttachments(Path.Combine(basePath, "attachments/file02.txt"));
+        Adapter.AddAttachments(Path.Combine(basePath, "attachments", "file02.txt"));
         Adapter.AddAttachments(new List<string>
         {
-            Path.Combine(basePath, "attachments/file03.txt"),
-            Path.Combine(basePath, "attachments/file04.txt")
+            Path.Combine(basePath, "attachments", "file03.txt"),
+            Path.Combine(basePath, "attachments", "file04.txt")
         });
 
         Adapter.AddMessage("Message");
@@ -98,11 +98,11 @@ public class MethodTests
 
         Adapter.AddAttachments("Content", "file01.txt");
         var basePath = AppContext.BaseDirectory;
-        Adapter.AddAttachments(Path.Combine(basePath, "attachments/file02.txt"));
+        Adapter.AddAttachments(Path.Combine(basePath, "attachments", "file02.txt"));
         Adapter.AddAttachments(new List<string>
         {
-            Path.Combine(basePath, "attachments/file03.txt"),
-            Path.Combine(basePath, "attachments/file04.txt")
+            Path.Combine(basePath, "attachments", "file03.txt"),
+            Path.Combine(basePath, "attachments", "file04.txt")
         });
 
         Adapter.AddMessage("Message");

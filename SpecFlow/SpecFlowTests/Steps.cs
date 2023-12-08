@@ -44,11 +44,11 @@ namespace SpecFlowTests
         {
             Adapter.AddAttachments("Content", "file01.txt");
             var basePath = AppContext.BaseDirectory;
-            Adapter.AddAttachments(Path.Combine(basePath, "attachments/file02.txt"));
+            Adapter.AddAttachments(Path.Combine(basePath, "attachments", "file02.txt"));
             Adapter.AddAttachments(new List<string>
             {
-                Path.Combine(basePath, "attachments/file03.txt"),
-                Path.Combine(basePath, "attachments/file04.txt")
+                Path.Combine(basePath, "attachments", "file03.txt"),
+                Path.Combine(basePath, "attachments", "file04.txt")
             });
         }
 
