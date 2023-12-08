@@ -75,14 +75,14 @@ public class AttributesTests
 
     [Labels("Label1", "Label2")]
     [Test]
-    public void LablesAttribute_Success()
+    public void LabelsAttribute_Success()
     {
         Assert.IsTrue(true);
     }
 
     [Labels("Label1", "Label2")]
     [Test]
-    public void LablesAttribute_Failed()
+    public void LabelsAttribute_Failed()
     {
         Assert.IsTrue(false);
     }

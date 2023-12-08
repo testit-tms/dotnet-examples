@@ -9,15 +9,13 @@
     </PropertyGroup>
 
     <ItemGroup>
-        <PackageReference Include="MethodBoundaryAspect.Fody" Version="2.0.148" />
+        <PackageReference Include="MethodBoundaryAspect.Fody" Version="2.0.148">
+          <TreatAsUsed>true</TreatAsUsed>
+        </PackageReference>
         <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.5.0" />
         <PackageReference Include="MSTest.TestAdapter" Version="3.0.2" />
         <PackageReference Include="MSTest.TestFramework" Version="3.0.2" />
-        <PackageReference Include="coverlet.collector" Version="3.2.0">
-          <PrivateAssets>all</PrivateAssets>
-          <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
-        </PackageReference>
-        <PackageReference Include="TestIT.Adapter" Version="1.0.8" />
+        <PackageReference Include="TestIT.Adapter" Version="1.1.1" />
     </ItemGroup>
 
     <ItemGroup>
@@ -33,6 +31,10 @@
       <None Update="attachments\file04.txt">
         <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       </None>
+    </ItemGroup>
+
+    <ItemGroup>
+      <Using Include="Microsoft.VisualStudio.TestTools.UnitTesting" />
     </ItemGroup>
 
 </Project>

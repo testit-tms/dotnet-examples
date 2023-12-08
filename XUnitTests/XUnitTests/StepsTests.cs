@@ -12,12 +12,12 @@ public class StepsTests: IDisposable
     {
     }
     
-    [Tms.Adapter.XUnit.Attributes.Step]
+    [Step]
     private void Step01()
     {
     }
 
-    [Tms.Adapter.XUnit.Attributes.Step]
+    [Step]
     private void Step02(int number)
     {
     }
@@ -40,13 +40,13 @@ public class StepsTests: IDisposable
         Assert.True(false);
     }
 
-    [Tms.Adapter.XUnit.Attributes.Step]
+    [Step]
     [Title("Step03 Title")]
     private void Step03()
     {
     }
 
-    [Tms.Adapter.XUnit.Attributes.Step]
+    [Step]
     [Title("Step04 {number} Title")]
     private void Step04(int number)
     {
@@ -70,13 +70,13 @@ public class StepsTests: IDisposable
         Assert.True(false);
     }
 
-    [Tms.Adapter.XUnit.Attributes.Step]
+    [Step]
     [Description("Step03 Description")]
     private void Step05()
     {
     }
 
-    [Tms.Adapter.XUnit.Attributes.Step]
+    [Step]
     [Description("Step04 {number} Description")]
     private void Step06(int number)
     {
@@ -100,14 +100,14 @@ public class StepsTests: IDisposable
         Assert.True(false);
     }
 
-    [Tms.Adapter.XUnit.Attributes.Step]
+    [Step]
     [Title("Step07 Title")]
     [Tms.Adapter.Core.Attributes.Description("Step03 Description")]
     private void Step07()
     {
     }
 
-    [Tms.Adapter.XUnit.Attributes.Step]
+    [Step]
     [Title("Step08 {number} Title")]
     [Description("Step04 {number} Description")]
     private void Step08(int number)
