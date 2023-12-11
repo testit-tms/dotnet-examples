@@ -104,7 +104,7 @@ public class AttributesTests
         Assert.True(false);
     }
 
-    [WorkItemIds("123", "321")]
+    [WorkItemIds("24654", "24655")]
     [TmsFact]
     public void WorkItemIdsAttribute_Success()
     {
@@ -125,7 +125,7 @@ public class AttributesTests
     [Labels("Label1", "Label2")]
     [Links("https://test01.example", "Example01", "Example01 description", LinkType.Issue)]
     [Links("https://test02.example")]
-    [WorkItemIds("123", "321")]
+    [WorkItemIds("24654", "24655")]
     [TmsFact]
     public void WithAllAttributes_Success()
     {
@@ -139,7 +139,7 @@ public class AttributesTests
     [Labels("Label1", "Label2")]
     [Links("https://test01.example", "Example01", "Example01 description", LinkType.Issue)]
     [Links("https://test02.example")]
-    [WorkItemIds("123", "321")]
+    [WorkItemIds("24654", "321")]
     [TmsFact]
     public void WithAllAttributes_Failed()
     {

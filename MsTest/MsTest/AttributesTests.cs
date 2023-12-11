@@ -104,7 +104,7 @@ public class AttributesTests
         Assert.IsTrue(false);
     }
 
-    [WorkItemIds("123", "321")]
+    [WorkItemIds("24438", "24439")]
     [TestMethod]
     public void WorkItemIdsAttribute_Success()
     {
@@ -125,7 +125,7 @@ public class AttributesTests
     [Labels("Label1", "Label2")]
     [Links("https://test01.example", LinkType.Issue, "Example01", "Example01 description")]
     [Links("https://test02.example", LinkType.Issue, "Example02", "Example02 description")]
-    [WorkItemIds("123", "321")]
+    [WorkItemIds("24438", "24439")]
     [TestMethod]
     public void WithAllAttributes_Success()
     {
@@ -139,7 +139,7 @@ public class AttributesTests
     [Labels("Label1", "Label2")]
     [Links("https://test01.example", LinkType.Issue, "Example01", "Example01 description")]
     [Links("https://test02.example", LinkType.Issue, "Example02", "Example02 description")]
-    [WorkItemIds("123", "321")]
+    [WorkItemIds("24438", "321")]
     [TestMethod]
     public void WithAllAttributes_Failed()
     {
