@@ -2,7 +2,7 @@ using Tms.Adapter.Core.Attributes;
 using Tms.Adapter.Core.Models;
 using Tms.Adapter.XUnit.Attributes;
 
-namespace XUnitTests;
+namespace XUnitTests.Tests;
 
 public class AttributesTests
 {
@@ -11,79 +11,77 @@ public class AttributesTests
     {
         Assert.True(true);
     }
-    
+
     [TmsFact]
     public void WithoutAttributes_Failed()
     {
         Assert.True(false);
     }
-    
+
     [ExternalId("ExternalIdAttribute_Success")]
     [TmsFact]
     public void ExternalIdAttribute_Success()
     {
         Assert.True(true);
     }
-    
+
     [ExternalId("ExternalIdAttribute_Failed")]
     [TmsFact]
     public void ExternalIdAttribute_Failed()
     {
         Assert.True(false);
     }
-    
-    [DisplayName("DisplayNameAttribute_Success DisplayName")]
-    [TmsFact]
+
+    [TmsFact(DisplayName = "DisplayNameAttribute_Success DisplayName")]
     public void DisplayNameAttribute_Success()
     {
         Assert.True(true);
     }
-    
-    [DisplayName("DisplayNameAttribute_Failed DisplayName")]
-    [TmsFact]
+
+    [TmsFact(DisplayName = "DisplayNameAttribute_Failed DisplayName")]
     public void DisplayNameAttribute_Failed()
     {
         Assert.True(false);
     }
-    
+
     [Title("TitleAttribute_Success Title")]
     [TmsFact]
     public void TitleAttribute_Success()
     {
         Assert.True(true);
     }
-    
+
     [Title("TitleAttribute_Failed Title")]
     [TmsFact]
     public void TitleAttribute_Failed()
     {
         Assert.True(false);
     }
-    
+
     [Description("DescriptionAttribute_Success")]
     [TmsFact]
     public void DescriptionAttribute_Success()
     {
         Assert.True(true);
     }
-    
+
     [Description("DescriptionAttribute_Failed")]
     [TmsFact]
     public void DescriptionAttribute_Failed()
     {
         Assert.True(false);
     }
-    
+
     [Labels("Label1", "Label2")]
     [TmsFact]
-    public void LablesAttribute_Success()
+    public void LabelsAttribute_Success()
     {
         Assert.True(true);
     }
-    
+
     [Labels("Label1", "Label2")]
     [TmsFact]
-    public void LablesAttribute_Failed()
+    public void LabelsAttribute_Failed()
     {
         Assert.True(false);
     }
@@ -104,7 +102,7 @@ public class AttributesTests
         Assert.True(false);
     }
 
-    [WorkItemIds("123", "321")]
+    [WorkItemIds("24654", "24655")]
     [TmsFact]
     public void WorkItemIdsAttribute_Success()
     {
@@ -119,28 +117,26 @@ public class AttributesTests
     }
 
     [ExternalId("WithAllAttributes_Success")]
-    [DisplayName("WithAllAttributes_Success DisplayName")]
     [Title("WithAllAttributes_Success Title")]
     [Description("WithAllAttributes_Success Description")]
     [Labels("Label1", "Label2")]
     [Links("https://test01.example", "Example01", "Example01 description", LinkType.Issue)]
     [Links("https://test02.example")]
-    [WorkItemIds("123", "321")]
-    [TmsFact]
+    [WorkItemIds("24654", "24655")]
+    [TmsFact(DisplayName = "DisplayNameAttribute_Failed DisplayName")]
     public void WithAllAttributes_Success()
     {
         Assert.True(true);
     }
 
     [ExternalId("WithAllAttributes_Failed")]
-    [DisplayName("WithAllAttributes_Failed DisplayName")]
     [Title("WithAllAttributes_Failed Title")]
     [Description("WithAllAttributes_Failed Description")]
     [Labels("Label1", "Label2")]
     [Links("https://test01.example", "Example01", "Example01 description", LinkType.Issue)]
     [Links("https://test02.example")]
-    [WorkItemIds("123", "321")]
-    [TmsFact]
+    [WorkItemIds("24654", "321")]
+    [TmsFact(DisplayName = "WithAllAttributes_Failed DisplayName")]
     public void WithAllAttributes_Failed()
     {
         Assert.True(false);
@@ -151,20 +147,18 @@ public class AttributesTests
     [InlineData(3, "string3")]
     [ExternalId("ParametrizedTest_Success_{number}_{str}")]
     [Title("ParametrizedTest_Success Title {number} {str}")]
-    [DisplayName("ParametrizedTest_Success DisplayName {number} {str}")]
-    [TmsTheory]
+    [TmsTheory(DisplayName = "ParametrizedTest_Success DisplayName {number} {str}")]
     public void ParametrizedTest_Success(int number, string str)
     {
         Assert.True(true);
     }
-    
+
     [InlineData(1, "string1")]
     [InlineData(2, "string2")]
     [InlineData(3, "string3")]
     [ExternalId("ParametrizedTest_Failed_{number}_{str}")]
     [Title("ParametrizedTest_Failed Title {number} {str}")]
-    [DisplayName("ParametrizedTest_Failed DisplayName {number} {str}")]
-    [TmsTheory]
+    [TmsTheory(DisplayName = "ParametrizedTest_Failed DisplayName {number} {str}")]
     public void ParametrizedTest_Failed(int number, string str)
     {
         Assert.True(false);

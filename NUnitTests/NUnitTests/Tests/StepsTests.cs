@@ -1,42 +1,41 @@
 using Tms.Adapter.Attributes;
 
-namespace MsTest;
+namespace NUnitTests.Tests;
 
-[TestClass]
 public class StepsTests
 {
-    [TestInitialize]
+    [SetUp]
     [Step]
     public void TestSetup()
     {
     }
-    
+
     [Step]
     private void Step01()
     {
     }
 
     [Step]
-    private void Step02(int number)
+    private void Step02(int _)
     {
     }
 
-    [TestMethod]
+    [Test]
     public void StepsWithoutAttributes_Success()
     {
         Step01();
         Step02(2);
 
-        Assert.IsTrue(true);
+        Assert.That(true);
     }
 
-    [TestMethod]
+    [Test]
     public void StepsWithoutAttributes_Failed()
     {
         Step01();
         Step02(2);
 
-        Assert.IsTrue(false);
+        Assert.That(false);
     }
 
     [Step]
@@ -46,27 +45,27 @@ public class StepsTests
     }
 
     [Step]
-    [Title("Step04 {number} Title")]
-    private void Step04(int number)
+    [Title("Step04 {_} Title")]
+    private void Step04(int _)
     {
     }
 
-    [TestMethod]
+    [Test]
     public void StepsWithTitleAttribute_Success()
     {
         Step03();
         Step04(3);
 
-        Assert.IsTrue(true);
+        Assert.That(true);
     }
 
-    [TestMethod]
+    [Test]
     public void StepsWithTitleAttribute_Failed()
     {
         Step03();
         Step04(3);
 
-        Assert.IsTrue(false);
+        Assert.That(false);
     }
 
     [Step]
@@ -76,27 +75,27 @@ public class StepsTests
     }
 
     [Step]
-    [Tms.Adapter.Attributes.Description("Step04 {number} Description")]
-    private void Step06(int number)
+    [Tms.Adapter.Attributes.Description("Step04 {_} Description")]
+    private void Step06(int _)
     {
     }
 
-    [TestMethod]
+    [Test]
     public void StepsWithDescriptionAttribute_Success()
     {
         Step05();
         Step06(4);
 
-        Assert.IsTrue(true);
+        Assert.That(true);
     }
 
-    [TestMethod]
+    [Test]
     public void StepsWithDescriptionAttribute_Failed()
     {
         Step05();
         Step06(4);
 
-        Assert.IsTrue(false);
+        Assert.That(false);
     }
 
     [Step]
@@ -107,31 +106,31 @@ public class StepsTests
     }
 
     [Step]
-    [Title("Step08 {number} Title")]
-    [Tms.Adapter.Attributes.Description("Step04 {number} Description")]
-    private void Step08(int number)
+    [Title("Step08 {_} Title")]
+    [Tms.Adapter.Attributes.Description("Step04 {_} Description")]
+    private void Step08(int _)
     {
     }
 
-    [TestMethod]
+    [Test]
     public void StepsWithAllAttributes_Success()
     {
         Step07();
         Step08(5);
 
-        Assert.IsTrue(true);
+        Assert.That(true);
     }
 
-    [TestMethod]
+    [Test]
     public void StepsWithAllAttributes_Failed()
     {
         Step07();
         Step08(5);
 
-        Assert.IsTrue(false);
+        Assert.That(false);
     }
-    
-    [TestCleanup]
+
+    [TearDown]
     [Step]
     public void TestCleanup()
     {

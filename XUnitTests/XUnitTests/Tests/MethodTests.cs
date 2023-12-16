@@ -2,10 +2,12 @@ using Tms.Adapter.Core.Models;
 using Tms.Adapter.Core.Service;
 using Tms.Adapter.XUnit.Attributes;
 
-namespace XUnitTests;
+namespace XUnitTests.Tests;
 
 public class MethodTests
 {
+    private static readonly string AttachmentsPath = Path.Combine(AppContext.BaseDirectory, "Attachments");
+
     [TmsFact]
     public void AddLinks_Success()
     {
@@ -28,12 +30,11 @@ public class MethodTests
     public void AddAttachments_Success()
     {
         Adapter.AddAttachments("Content", "file01.txt");
-        var basePath = AppContext.BaseDirectory;
-        Adapter.AddAttachments(Path.Combine(basePath, "attachments/file02.txt"));
+        Adapter.AddAttachments(Path.Combine(AttachmentsPath, "file02.txt"));
         Adapter.AddAttachments(new List<string>
         {
-            Path.Combine(basePath, "attachments/picture.jpeg"),
-            Path.Combine(basePath, "attachments/picture.png")
+            Path.Combine(AttachmentsPath, "file03.txt"),
+            Path.Combine(AttachmentsPath, "file04.txt")
         });
 
         Assert.True(true);
@@ -43,12 +44,11 @@ public class MethodTests
     public void AddAttachments_Failed()
     {
         Adapter.AddAttachments("Content", "file01.txt");
-        var basePath = AppContext.BaseDirectory;
-        Adapter.AddAttachments(Path.Combine(basePath, "attachments/file02.txt"));
+        Adapter.AddAttachments(Path.Combine(AttachmentsPath, "file02.txt"));
         Adapter.AddAttachments(new List<string>
         {
-            Path.Combine(basePath, "attachments/file03.txt"),
-            Path.Combine(basePath, "attachments/file04.txt")
+            Path.Combine(AttachmentsPath, "file03.txt"),
+            Path.Combine(AttachmentsPath, "file04.txt")
         });
 
         Assert.True(false);
@@ -77,12 +77,11 @@ public class MethodTests
         Adapter.AddLinks("https://test02.example");
 
         Adapter.AddAttachments("Content", "file01.txt");
-        var basePath = AppContext.BaseDirectory;
-        Adapter.AddAttachments(Path.Combine(basePath, "attachments/file02.txt"));
+        Adapter.AddAttachments(Path.Combine(AttachmentsPath, "file02.txt"));
         Adapter.AddAttachments(new List<string>
         {
-            Path.Combine(basePath, "attachments/file03.txt"),
-            Path.Combine(basePath, "attachments/file04.txt")
+            Path.Combine(AttachmentsPath, "file03.txt"),
+            Path.Combine(AttachmentsPath, "file04.txt")
         });
 
         Adapter.AddMessage("Message");
@@ -97,12 +96,11 @@ public class MethodTests
         Adapter.AddLinks("https://test02.example");
 
         Adapter.AddAttachments("Content", "file01.txt");
-        var basePath = AppContext.BaseDirectory;
-        Adapter.AddAttachments(Path.Combine(basePath, "attachments/file02.txt"));
+        Adapter.AddAttachments(Path.Combine(AttachmentsPath, "file02.txt"));
         Adapter.AddAttachments(new List<string>
         {
-            Path.Combine(basePath, "attachments/file03.txt"),
-            Path.Combine(basePath, "attachments/file04.txt")
+            Path.Combine(AttachmentsPath, "file03.txt"),
+            Path.Combine(AttachmentsPath, "file04.txt")
         });
 
         Adapter.AddMessage("Message");

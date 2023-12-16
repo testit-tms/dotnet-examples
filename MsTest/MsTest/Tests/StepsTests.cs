@@ -1,10 +1,11 @@
 using Tms.Adapter.Attributes;
 
-namespace NUnitTests;
+namespace MsTest.Tests;
 
+[TestClass]
 public class StepsTests
 {
-    [SetUp]
+    [TestInitialize]
     [Step]
     public void TestSetup()
     {
@@ -16,11 +17,11 @@ public class StepsTests
     }
 
     [Step]
-    private void Step02(int number)
+    private void Step02(int _)
     {
     }
 
-    [Test]
+    [TestMethod]
     public void StepsWithoutAttributes_Success()
     {
         Step01();
@@ -29,7 +30,7 @@ public class StepsTests
         Assert.IsTrue(true);
     }
 
-    [Test]
+    [TestMethod]
     public void StepsWithoutAttributes_Failed()
     {
         Step01();
@@ -45,12 +46,12 @@ public class StepsTests
     }
 
     [Step]
-    [Title("Step04 {number} Title")]
-    private void Step04(int number)
+    [Title("Step04 {_} Title")]
+    private void Step04(int _)
     {
     }
 
-    [Test]
+    [TestMethod]
     public void StepsWithTitleAttribute_Success()
     {
         Step03();
@@ -59,7 +60,7 @@ public class StepsTests
         Assert.IsTrue(true);
     }
 
-    [Test]
+    [TestMethod]
     public void StepsWithTitleAttribute_Failed()
     {
         Step03();
@@ -75,12 +76,12 @@ public class StepsTests
     }
 
     [Step]
-    [Tms.Adapter.Attributes.Description("Step04 {number} Description")]
-    private void Step06(int number)
+    [Tms.Adapter.Attributes.Description("Step04 {_} Description")]
+    private void Step06(int _)
     {
     }
 
-    [Test]
+    [TestMethod]
     public void StepsWithDescriptionAttribute_Success()
     {
         Step05();
@@ -89,7 +90,7 @@ public class StepsTests
         Assert.IsTrue(true);
     }
 
-    [Test]
+    [TestMethod]
     public void StepsWithDescriptionAttribute_Failed()
     {
         Step05();
@@ -106,13 +107,13 @@ public class StepsTests
     }
 
     [Step]
-    [Title("Step08 {number} Title")]
-    [Tms.Adapter.Attributes.Description("Step04 {number} Description")]
-    private void Step08(int number)
+    [Title("Step08 {_} Title")]
+    [Tms.Adapter.Attributes.Description("Step04 {_} Description")]
+    private void Step08(int _)
     {
     }
 
-    [Test]
+    [TestMethod]
     public void StepsWithAllAttributes_Success()
     {
         Step07();
@@ -121,7 +122,7 @@ public class StepsTests
         Assert.IsTrue(true);
     }
 
-    [Test]
+    [TestMethod]
     public void StepsWithAllAttributes_Failed()
     {
         Step07();
@@ -130,7 +131,7 @@ public class StepsTests
         Assert.IsTrue(false);
     }
 
-    [TearDown]
+    [TestCleanup]
     [Step]
     public void TestCleanup()
     {

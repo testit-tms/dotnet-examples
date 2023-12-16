@@ -1,24 +1,27 @@
 using Tms.Adapter.Core.Attributes;
 using Tms.Adapter.XUnit.Attributes;
 
-namespace XUnitTests;
+namespace XUnitTests.Tests;
 
-
-public class StepsTests: IDisposable
+public class StepsTests : IDisposable
 {
-    
     [Before]
     public StepsTests()
     {
     }
-    
-    [Tms.Adapter.XUnit.Attributes.Step]
+
+    [After]
+    public void Dispose()
+    {
+    }
+
+    [Step]
     private void Step01()
     {
     }
 
-    [Tms.Adapter.XUnit.Attributes.Step]
-    private void Step02(int number)
+    [Step]
+    private void Step02(int _)
     {
     }
 
@@ -40,15 +43,15 @@ public class StepsTests: IDisposable
         Assert.True(false);
     }
 
-    [Tms.Adapter.XUnit.Attributes.Step]
+    [Step]
     [Title("Step03 Title")]
     private void Step03()
     {
     }
 
-    [Tms.Adapter.XUnit.Attributes.Step]
-    [Title("Step04 {number} Title")]
-    private void Step04(int number)
+    [Step]
+    [Title("Step04 {_} Title")]
+    private void Step04(int _)
     {
     }
 
@@ -70,15 +73,15 @@ public class StepsTests: IDisposable
         Assert.True(false);
     }
 
-    [Tms.Adapter.XUnit.Attributes.Step]
+    [Step]
     [Description("Step03 Description")]
     private void Step05()
     {
     }
 
-    [Tms.Adapter.XUnit.Attributes.Step]
-    [Description("Step04 {number} Description")]
-    private void Step06(int number)
+    [Step]
+    [Description("Step04 {_} Description")]
+    private void Step06(int _)
     {
     }
 
@@ -100,17 +103,17 @@ public class StepsTests: IDisposable
         Assert.True(false);
     }
 
-    [Tms.Adapter.XUnit.Attributes.Step]
+    [Step]
     [Title("Step07 Title")]
-    [Tms.Adapter.Core.Attributes.Description("Step03 Description")]
+    [Description("Step03 Description")]
     private void Step07()
     {
     }
 
-    [Tms.Adapter.XUnit.Attributes.Step]
-    [Title("Step08 {number} Title")]
-    [Description("Step04 {number} Description")]
-    private void Step08(int number)
+    [Step]
+    [Title("Step08 {_} Title")]
+    [Description("Step04 {_} Description")]
+    private void Step08(int _)
     {
     }
 
@@ -130,10 +133,5 @@ public class StepsTests: IDisposable
         Step08(5);
 
         Assert.True(false);
-    }
-    
-    [After]
-    public void Dispose()
-    {
     }
 }

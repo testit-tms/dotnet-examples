@@ -1,121 +1,120 @@
 using Tms.Adapter.Attributes;
 using Tms.Adapter.Models;
 
-namespace MsTest;
+namespace NUnitTests.Tests;
 
-[TestClass]
 public class AttributesTests
 {
-    [TestMethod]
+    [Test]
     public void WithoutAttributes_Success()
     {
-        Assert.IsTrue(true);
+        Assert.That(true);
     }
 
-    [TestMethod]
+    [Test]
     public void WithoutAttributes_Failed()
     {
-        Assert.IsTrue(false);
+        Assert.That(false);
     }
 
     [ExternalId("ExternalIdAttribute_Success")]
-    [TestMethod]
+    [Test]
     public void ExternalIdAttribute_Success()
     {
-        Assert.IsTrue(true);
+        Assert.That(true);
     }
 
     [ExternalId("ExternalIdAttribute_Failed")]
-    [TestMethod]
+    [Test]
     public void ExternalIdAttribute_Failed()
     {
-        Assert.IsTrue(false);
+        Assert.That(false);
     }
 
     [DisplayName("DisplayNameAttribute_Success DisplayName")]
-    [TestMethod]
+    [Test]
     public void DisplayNameAttribute_Success()
     {
-        Assert.IsTrue(true);
+        Assert.That(true);
     }
 
     [DisplayName("DisplayNameAttribute_Failed DisplayName")]
-    [TestMethod]
+    [Test]
     public void DisplayNameAttribute_Failed()
     {
-        Assert.IsTrue(false);
+        Assert.That(false);
     }
 
     [Title("TitleAttribute_Success Title")]
-    [TestMethod]
+    [Test]
     public void TitleAttribute_Success()
     {
-        Assert.IsTrue(true);
+        Assert.That(true);
     }
 
     [Title("TitleAttribute_Failed Title")]
-    [TestMethod]
+    [Test]
     public void TitleAttribute_Failed()
     {
-        Assert.IsTrue(false);
+        Assert.That(false);
     }
 
     [Tms.Adapter.Attributes.Description("DescriptionAttribute_Success")]
-    [TestMethod]
+    [Test]
     public void DescriptionAttribute_Success()
     {
-        Assert.IsTrue(true);
+        Assert.That(true);
     }
 
     [Tms.Adapter.Attributes.Description("DescriptionAttribute_Failed")]
-    [TestMethod]
+    [Test]
     public void DescriptionAttribute_Failed()
     {
-        Assert.IsTrue(false);
+        Assert.That(false);
     }
 
     [Labels("Label1", "Label2")]
-    [TestMethod]
-    public void LablesAttribute_Success()
+    [Test]
+    public void LabelsAttribute_Success()
     {
-        Assert.IsTrue(true);
+        Assert.That(true);
     }
 
     [Labels("Label1", "Label2")]
-    [TestMethod]
-    public void LablesAttribute_Failed()
+    [Test]
+    public void LabelsAttribute_Failed()
     {
-        Assert.IsTrue(false);
+        Assert.That(false);
     }
 
     [Links("https://test01.example", LinkType.Issue, "Example01", "Example01 description")]
     [Links("https://test02.example", LinkType.Issue, "Example02", "Example02 description")]
-    [TestMethod]
+    [Test]
     public void LinksAttribute_Success()
     {
-        Assert.IsTrue(true);
+        Assert.That(true);
     }
 
     [Links("https://test01.example", LinkType.Issue, "Example01", "Example01 description")]
     [Links("https://test02.example", LinkType.Issue, "Example02", "Example02 description")]
-    [TestMethod]
+    [Test]
     public void LinksAttribute_Failed()
     {
-        Assert.IsTrue(false);
+        Assert.That(false);
     }
 
-    [WorkItemIds("123", "321")]
-    [TestMethod]
+    [WorkItemIds("24528", "24529")]
+    [Test]
     public void WorkItemIdsAttribute_Success()
     {
-        Assert.IsTrue(true);
+        Assert.That(true);
     }
 
     [WorkItemIds("123", "321")]
-    [TestMethod]
+    [Test]
     public void WorkItemIdsAttribute_Failed()
     {
-        Assert.IsTrue(false);
+        Assert.That(false);
     }
 
     [ExternalId("WithAllAttributes_Success")]
@@ -125,13 +124,13 @@ public class AttributesTests
     [Labels("Label1", "Label2")]
     [Links("https://test01.example", LinkType.Issue, "Example01", "Example01 description")]
     [Links("https://test02.example", LinkType.Issue, "Example02", "Example02 description")]
-    [WorkItemIds("123", "321")]
-    [TestMethod]
+    [WorkItemIds("24528", "24529")]
+    [Test]
     public void WithAllAttributes_Success()
     {
-        Assert.IsTrue(true);
+        Assert.That(true);
     }
-    
+
     [ExternalId("WithAllAttributes_Failed")]
     [DisplayName("WithAllAttributes_Failed DisplayName")]
     [Title("WithAllAttributes_Failed Title")]
@@ -139,36 +138,36 @@ public class AttributesTests
     [Labels("Label1", "Label2")]
     [Links("https://test01.example", LinkType.Issue, "Example01", "Example01 description")]
     [Links("https://test02.example", LinkType.Issue, "Example02", "Example02 description")]
-    [WorkItemIds("123", "321")]
-    [TestMethod]
+    [WorkItemIds("24528", "321")]
+    [Test]
     public void WithAllAttributes_Failed()
     {
-        Assert.IsTrue(false);
+        Assert.That(false);
     }
 
     [Parameterized]
-    [DataRow(1, "string1")]
-    [DataRow(2, "string2")]
-    [DataRow(3, "string3")]
+    [TestCase(1, "string1")]
+    [TestCase(2, "string2")]
+    [TestCase(3, "string3")]
     [ExternalId("ParametrizedTest_Success_{number}_{str}")]
     [Title("ParametrizedTest_Success Title {number} {str}")]
     [DisplayName("ParametrizedTest_Success DisplayName {number} {str}")]
-    [TestMethod]
+    [Test]
     public void ParametrizedTest_Success(int number, string str)
     {
-        Assert.IsTrue(true);
+        Assert.That(true);
     }
 
     [Parameterized]
-    [DataRow(1, "string1")]
-    [DataRow(2, "string2")]
-    [DataRow(3, "string3")]
+    [TestCase(1, "string1")]
+    [TestCase(2, "string2")]
+    [TestCase(3, "string3")]
     [ExternalId("ParametrizedTest_Failed_{number}_{str}")]
     [Title("ParametrizedTest_Failed Title {number} {str}")]
     [DisplayName("ParametrizedTest_Failed DisplayName {number} {str}")]
-    [TestMethod]
+    [Test]
     public void ParametrizedTest_Failed(int number, string str)
     {
-        Assert.IsTrue(false);
+        Assert.That(false);
     }
 }

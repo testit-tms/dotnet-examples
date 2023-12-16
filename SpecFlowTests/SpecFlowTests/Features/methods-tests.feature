@@ -16,7 +16,6 @@ Feature: MethodsTests
         When add attachments
         Then return false
 
-
     Scenario: Add message success
         When add message
         Then return true
@@ -24,7 +23,6 @@ Feature: MethodsTests
     Scenario: Add message failed
         When add message
         Then return false
-
 
     Scenario: Add all methods success
         When add all methods
