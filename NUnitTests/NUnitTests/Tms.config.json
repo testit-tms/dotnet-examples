@@ -1,9 +1,8 @@
 {
-  "url": "{URL}",
-  "privateToken": "{TOKEN}",
-  "projectId": "{PROJECT_ID}",
-  "configurationId": "{CONFIGURATION_ID}",
-  "testRunId": "{TEST_RUN_ID}",
-  "testRunName": "{TEST_RUN_NAME}",
-  "adapterMode": "{ADAPTER_MODE}"
+  "url": "https://team-okp8.testit.software",
+  "privateToken": "TDE3NXlwbUR6WlRzbmh0V2ow",
+  "projectId": "7b42a985-0aa8-47dd-94ad-b7c45bf184f0",
+  "configurationId": "e5a7a101-6d17-4083-9d77-9522df2fbe01",
+  "testRunName": "Test",
+  "adapterMode": 2
 }
