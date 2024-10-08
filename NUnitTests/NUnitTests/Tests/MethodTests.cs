@@ -1,4 +1,5 @@
 using Tms.Adapter;
+using Tms.Adapter.Attributes;
 using Tms.Adapter.Models;
 
 namespace NUnitTests.Tests;
@@ -7,13 +8,24 @@ public class MethodTests
 {
     private static readonly string AttachmentsPath = Path.Combine(AppContext.BaseDirectory, "Attachments");
 
+    [Step]
+    public void AssertSuccess() {
+        Assert.That(true);
+    }
+
+    [Step]
+    public void AssertFailure() {
+        Assert.That(false);
+    }
+
+
     [Test]
     public void AddLinks_Success()
     {
         Adapter.AddLinks("https://test01.example", "Example01", "Example01 description", LinkType.Issue);
         Adapter.AddLinks("https://test02.example", "Example02", "Example02 description", LinkType.Repository);
 
-        Assert.That(true);
+        AssertSuccess();
     }
 
     [Test]
@@ -22,7 +34,7 @@ public class MethodTests
         Adapter.AddLinks("https://test01.example", "Example01", "Example01 description", LinkType.Issue);
         Adapter.AddLinks("https://test02.example", "Example02", "Example02 description", LinkType.Repository);
 
-        Assert.That(false);
+        AssertFailure();
     }
 
     [Test]
@@ -36,7 +48,7 @@ public class MethodTests
             Path.Combine(AttachmentsPath, "file04.txt")
         });
 
-        Assert.That(true);
+        AssertSuccess();
     }
 
     [Test]
@@ -50,7 +62,7 @@ public class MethodTests
             Path.Combine(AttachmentsPath, "file04.txt")
         });
 
-        Assert.That(false);
+        AssertFailure();
     }
 
     [Test]
@@ -58,7 +70,7 @@ public class MethodTests
     {
         Adapter.AddMessage("Message");
 
-        Assert.That(true);
+        AssertSuccess();
     }
 
     [Test]
@@ -66,7 +78,7 @@ public class MethodTests
     {
         Adapter.AddMessage("Message");
 
-        Assert.That(false);
+        AssertFailure();
     }
 
     [Test]
@@ -85,7 +97,7 @@ public class MethodTests
 
         Adapter.AddMessage("Message");
 
-        Assert.That(true);
+        AssertSuccess();
     }
 
     [Test]
@@ -104,6 +116,6 @@ public class MethodTests
 
         Adapter.AddMessage("Message");
 
-        Assert.That(false);
+        AssertFailure();
     }
 }

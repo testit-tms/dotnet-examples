@@ -4,6 +4,18 @@ namespace NUnitTests.Tests;
 
 public class StepsTests
 {
+
+    [Step]
+    public void AssertSuccess() {
+        Assert.That(true);
+    }
+
+    [Step]
+    public void AssertFailure() {
+        Assert.That(false);
+    }
+
+
     [SetUp]
     [Step]
     public void TestSetup()
@@ -26,7 +38,7 @@ public class StepsTests
         Step01();
         Step02(2);
 
-        Assert.That(true);
+        AssertSuccess();
     }
 
     [Test]
@@ -35,7 +47,7 @@ public class StepsTests
         Step01();
         Step02(2);
 
-        Assert.That(false);
+        AssertFailure();
     }
 
     [Step]
@@ -56,7 +68,7 @@ public class StepsTests
         Step03();
         Step04(3);
 
-        Assert.That(true);
+        AssertSuccess();
     }
 
     [Test]
@@ -65,7 +77,7 @@ public class StepsTests
         Step03();
         Step04(3);
 
-        Assert.That(false);
+        AssertFailure();
     }
 
     [Step]
@@ -86,7 +98,7 @@ public class StepsTests
         Step05();
         Step06(4);
 
-        Assert.That(true);
+        AssertSuccess();
     }
 
     [Test]
@@ -95,7 +107,7 @@ public class StepsTests
         Step05();
         Step06(4);
 
-        Assert.That(false);
+        AssertFailure();
     }
 
     [Step]
@@ -118,7 +130,7 @@ public class StepsTests
         Step07();
         Step08(5);
 
-        Assert.That(true);
+        AssertSuccess();
     }
 
     [Test]
@@ -127,7 +139,7 @@ public class StepsTests
         Step07();
         Step08(5);
 
-        Assert.That(false);
+        AssertFailure();
     }
 
     [TearDown]

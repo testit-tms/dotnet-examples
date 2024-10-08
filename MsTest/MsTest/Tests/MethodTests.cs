@@ -1,12 +1,25 @@
 using Tms.Adapter;
 using Tms.Adapter.Models;
-
+using Tms.Adapter.Attributes;
 namespace MsTest.Tests;
 
 [TestClass]
 public class MethodTests
 {
+    
     private static readonly string AttachmentsPath = Path.Combine(AppContext.BaseDirectory, "Attachments");
+    [Step]
+    public void AssertSuccess() {
+        Assert.IsTrue(true);
+    }
+
+    
+    [Step]
+    public void AssertFailure() {
+        Assert.IsTrue(false);
+    }
+
+
 
     [TestMethod]
     public void AddLinks_Success()
@@ -14,7 +27,7 @@ public class MethodTests
         Adapter.AddLinks("https://test01.example", "Example01", "Example01 description", LinkType.Issue);
         Adapter.AddLinks("https://test02.example", "Example02", "Example02 description", LinkType.Repository);
 
-        Assert.IsTrue(true);
+        AssertSuccess();
     }
 
     [TestMethod]
@@ -23,7 +36,7 @@ public class MethodTests
         Adapter.AddLinks("https://test01.example", "Example01", "Example01 description", LinkType.Issue);
         Adapter.AddLinks("https://test02.example", "Example02", "Example02 description", LinkType.Repository);
 
-        Assert.IsTrue(false);
+        AssertFailure();
     }
 
     [TestMethod]
@@ -37,7 +50,7 @@ public class MethodTests
             Path.Combine(AttachmentsPath, "file04.txt")
         });
 
-        Assert.IsTrue(true);
+        AssertSuccess();
     }
 
     [TestMethod]
@@ -51,7 +64,7 @@ public class MethodTests
             Path.Combine(AttachmentsPath, "file04.txt")
         });
 
-        Assert.IsTrue(false);
+        AssertFailure();
     }
 
     [TestMethod]
@@ -59,7 +72,7 @@ public class MethodTests
     {
         Adapter.AddMessage("Message");
 
-        Assert.IsTrue(true);
+        AssertSuccess();
     }
 
     [TestMethod]
@@ -67,7 +80,7 @@ public class MethodTests
     {
         Adapter.AddMessage("Message");
 
-        Assert.IsTrue(false);
+        AssertFailure();
     }
 
     [TestMethod]
@@ -86,7 +99,7 @@ public class MethodTests
 
         Adapter.AddMessage("Message");
 
-        Assert.IsTrue(true);
+        AssertSuccess();
     }
 
     [TestMethod]
@@ -105,6 +118,6 @@ public class MethodTests
 
         Adapter.AddMessage("Message");
 
-        Assert.IsTrue(false);
+        AssertFailure();
     }
 }

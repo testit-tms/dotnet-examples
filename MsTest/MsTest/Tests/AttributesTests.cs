@@ -6,86 +6,98 @@ namespace MsTest.Tests;
 [TestClass]
 public class AttributesTests
 {
+    [Step]
+    public void AssertSuccess() {
+        Assert.IsTrue(true);
+    }
+
+    
+    [Step]
+    public void AssertFailure() {
+        Assert.IsTrue(false);
+    }
+
+
     [TestMethod]
     public void WithoutAttributes_Success()
     {
-        Assert.IsTrue(true);
+        AssertSuccess();
     }
 
     [TestMethod]
     public void WithoutAttributes_Failed()
     {
-        Assert.IsTrue(false);
+        AssertFailure();
     }
 
     [ExternalId("ExternalIdAttribute_Success")]
     [TestMethod]
     public void ExternalIdAttribute_Success()
     {
-        Assert.IsTrue(true);
+        AssertSuccess();
     }
 
     [ExternalId("ExternalIdAttribute_Failed")]
     [TestMethod]
     public void ExternalIdAttribute_Failed()
     {
-        Assert.IsTrue(false);
+        AssertFailure();
     }
 
     [DisplayName("DisplayNameAttribute_Success DisplayName")]
     [TestMethod]
     public void DisplayNameAttribute_Success()
     {
-        Assert.IsTrue(true);
+        AssertSuccess();
     }
 
     [DisplayName("DisplayNameAttribute_Failed DisplayName")]
     [TestMethod]
     public void DisplayNameAttribute_Failed()
     {
-        Assert.IsTrue(false);
+        AssertFailure();
     }
 
     [Title("TitleAttribute_Success Title")]
     [TestMethod]
     public void TitleAttribute_Success()
     {
-        Assert.IsTrue(true);
+        AssertSuccess();
     }
 
     [Title("TitleAttribute_Failed Title")]
     [TestMethod]
     public void TitleAttribute_Failed()
     {
-        Assert.IsTrue(false);
+        AssertFailure();
     }
 
     [Tms.Adapter.Attributes.Description("DescriptionAttribute_Success")]
     [TestMethod]
     public void DescriptionAttribute_Success()
     {
-        Assert.IsTrue(true);
+        AssertSuccess();
     }
 
     [Tms.Adapter.Attributes.Description("DescriptionAttribute_Failed")]
     [TestMethod]
     public void DescriptionAttribute_Failed()
     {
-        Assert.IsTrue(false);
+        AssertFailure();
     }
 
     [Labels("Label1", "Label2")]
     [TestMethod]
     public void LabelsAttribute_Success()
     {
-        Assert.IsTrue(true);
+        AssertSuccess();
     }
 
     [Labels("Label1", "Label2")]
     [TestMethod]
     public void LabelsAttribute_Failed()
     {
-        Assert.IsTrue(false);
+        AssertFailure();
     }
 
     [Links("https://test01.example", LinkType.Issue, "Example01", "Example01 description")]
@@ -93,7 +105,7 @@ public class AttributesTests
     [TestMethod]
     public void LinksAttribute_Success()
     {
-        Assert.IsTrue(true);
+        AssertSuccess();
     }
 
     [Links("https://test01.example", LinkType.Issue, "Example01", "Example01 description")]
@@ -101,27 +113,27 @@ public class AttributesTests
     [TestMethod]
     public void LinksAttribute_Failed()
     {
-        Assert.IsTrue(false);
+        AssertFailure();
     }
 
     [WorkItemIds("24920", "24921")]
     [TestMethod]
     public void WorkItemIdsAttribute_Success()
     {
-        Assert.IsTrue(true);
+        AssertSuccess();
     }
 
     [WorkItemIds("123", "321")]
     [TestMethod]
     public void WorkItemIdsAttribute_Failed()
     {
-        Assert.IsTrue(false);
+        AssertFailure();
     }
 
     [ExternalId("WithAllAttributes_Success")]
     [DisplayName("WithAllAttributes_Success DisplayName")]
     [Title("WithAllAttributes_Success Title")]
-    [Tms.Adapter.Attributes.Description("WithAllAttributes_Success Description")]
+    [Tms.Adapter.Attributes.Description("Тест кириллицы и юникода 😄")]
     [Labels("Label1", "Label2")]
     [Links("https://test01.example", LinkType.Issue, "Example01", "Example01 description")]
     [Links("https://test02.example", LinkType.Issue, "Example02", "Example02 description")]
@@ -143,7 +155,7 @@ public class AttributesTests
     [TestMethod]
     public void WithAllAttributes_Failed()
     {
-        Assert.IsTrue(false);
+        AssertFailure();
     }
 
     [Parameterized]
@@ -156,7 +168,7 @@ public class AttributesTests
     [TestMethod]
     public void ParametrizedTest_Success(int number, string str)
     {
-        Assert.IsTrue(true);
+        AssertSuccess();
     }
 
     [Parameterized]
@@ -169,6 +181,6 @@ public class AttributesTests
     [TestMethod]
     public void ParametrizedTest_Failed(int number, string str)
     {
-        Assert.IsTrue(false);
+        AssertFailure();
     }
 }

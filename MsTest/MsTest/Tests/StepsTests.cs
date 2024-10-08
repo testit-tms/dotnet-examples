@@ -1,10 +1,21 @@
 using Tms.Adapter.Attributes;
-
+using Tms.Adapter.Attributes;
 namespace MsTest.Tests;
 
 [TestClass]
 public class StepsTests
 {
+    [Step]
+    public void AssertSuccess() {
+        Assert.IsTrue(true);
+    }
+
+    
+    [Step]
+    public void AssertFailure() {
+        Assert.IsTrue(false);
+    }
+
     [TestInitialize]
     [Step]
     public void TestSetup()
@@ -27,7 +38,7 @@ public class StepsTests
         Step01();
         Step02(2);
 
-        Assert.IsTrue(true);
+        AssertSuccess();
     }
 
     [TestMethod]
@@ -36,7 +47,7 @@ public class StepsTests
         Step01();
         Step02(2);
 
-        Assert.IsTrue(false);
+        AssertFailure();
     }
 
     [Step]
@@ -57,7 +68,7 @@ public class StepsTests
         Step03();
         Step04(3);
 
-        Assert.IsTrue(true);
+        AssertSuccess();
     }
 
     [TestMethod]
@@ -66,7 +77,7 @@ public class StepsTests
         Step03();
         Step04(3);
 
-        Assert.IsTrue(false);
+        AssertFailure();
     }
 
     [Step]
@@ -87,7 +98,7 @@ public class StepsTests
         Step05();
         Step06(4);
 
-        Assert.IsTrue(true);
+        AssertSuccess();
     }
 
     [TestMethod]
@@ -96,7 +107,7 @@ public class StepsTests
         Step05();
         Step06(4);
 
-        Assert.IsTrue(false);
+        AssertFailure();
     }
 
     [Step]
@@ -119,7 +130,7 @@ public class StepsTests
         Step07();
         Step08(5);
 
-        Assert.IsTrue(true);
+        AssertSuccess();
     }
 
     [TestMethod]
@@ -128,7 +139,7 @@ public class StepsTests
         Step07();
         Step08(5);
 
-        Assert.IsTrue(false);
+        AssertFailure();
     }
 
     [TestCleanup]
