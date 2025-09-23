@@ -123,7 +123,7 @@ public class AttributesTests
     [Links("https://test01.example", "Example01", "Example01 description", LinkType.Issue)]
     [Links("https://test02.example")]
     [WorkItemIds("24654", "24655")]
-    [TmsFact(DisplayName = "DisplayNameAttribute_Failed DisplayName")]
+    [TmsFact(DisplayName = "WithAllAttributes_Success DisplayName")]
     public void WithAllAttributes_Success()
     {
         Assert.True(true);
