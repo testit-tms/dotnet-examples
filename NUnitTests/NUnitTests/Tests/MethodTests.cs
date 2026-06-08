@@ -106,4 +106,13 @@ public class MethodTests
 
         Assert.That(false);
     }
+
+    [Test]
+    public void AddMessage_WithNumericPrefixInStdout_Repro101()
+    {
+      Adapter.AddMessage("2: Req: interception-job-1.1 | GET - https://test.com");
+      Console.WriteLine("2: Req: interception-job-1.1 | GET - https://test.com");
+    
+      Assert.That(true);
+    }
 }
