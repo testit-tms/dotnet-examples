@@ -112,6 +112,13 @@ public class StepsTests
     {
     }
 
+    [Step]
+    private void Step10()
+    {
+        Step05();
+        Step06(4);
+    }
+
     [Test]
     public void StepsWithAllAttributes_Success()
     {
@@ -126,6 +133,14 @@ public class StepsTests
     {
         Step07();
         Step08(5);
+
+        Assert.That(false);
+    }
+
+    [Test]
+    public void StepsNested_Failed()
+    {
+        Step10();
 
         Assert.That(false);
     }
